@@ -1,0 +1,17 @@
+body {
+  font-family: 'Arial', sans-serif !important;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.App {
+  height: 768px;
+  width: 1024px;
+  background-color: #22373a;
+  margin: 0 auto;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}

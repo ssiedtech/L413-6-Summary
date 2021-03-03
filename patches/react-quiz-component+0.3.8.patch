@@ -1,0 +1,15 @@
+diff --git a/node_modules/react-quiz-component/lib/Quiz.js b/node_modules/react-quiz-component/lib/Quiz.js
+index d39a96d..dfda551 100644
+--- a/node_modules/react-quiz-component/lib/Quiz.js
++++ b/node_modules/react-quiz-component/lib/Quiz.js
+@@ -154,7 +154,9 @@ var Quiz = function Quiz(_ref) {
+ 
+   return _react.default.createElement("div", {
+     className: "react-quiz-container"
+-  }, !start && _react.default.createElement("div", null, _react.default.createElement("h2", null, quiz.quizTitle), _react.default.createElement("div", null, appLocale.landingHeaderText.replace("<questionLength>", quiz.questions.length)), quiz.quizSynopsis && _react.default.createElement("div", {
++  }, !start && _react.default.createElement("div", null, _react.default.createElement("h2", {
++    className: "slide-title"
++  }, quiz.quizTitle), _react.default.createElement("div", null, appLocale.landingHeaderText.replace("<questionLength>", quiz.questions.length)), quiz.quizSynopsis && _react.default.createElement("div", {
+     className: "quiz-synopsis"
+   }, quiz.quizSynopsis), _react.default.createElement("div", {
+     className: "startQuizWrapper"
