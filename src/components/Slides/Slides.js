@@ -1,9 +1,10 @@
-import React, { useRef, useState, useEffect, useContext } from 'react';
-import { Slide } from 'react-slideshow-image';
-import { AppContext } from '../../context/AppContext';
-import Quiz from 'react-quiz-component';
-import { quiz } from '../Quiz/Quiz';
-import TermsComponent from '../TermsComponent/TermsComponent.js';
+import React, { useRef, useState, useEffect, useContext } from "react";
+import { Slide } from "react-slideshow-image";
+import { AppContext } from "../../context/AppContext";
+import Quiz from "react-quiz-component";
+import { quiz } from "../Quiz/Quiz";
+import TermsComponent from "../TermsComponent/TermsComponent.js";
+import GFEBS from "../../img/GFEBS.png";
 
 function Slides() {
   // State management
@@ -19,23 +20,23 @@ function Slides() {
     // Removes back arrow on first slide
     if (context.currentSlide === 1) {
       document.querySelector(
-        '#root > div > div.mx-auto.my-auto > div > div > div.undefined.nav'
-      ).style.display = 'none';
+        "#root > div > div.mx-auto.my-auto > div > div > div.undefined.nav"
+      ).style.display = "none";
     } else {
       document.querySelector(
-        '#root > div > div.mx-auto.my-auto > div > div > div.undefined.nav'
-      ).style.display = 'block';
+        "#root > div > div.mx-auto.my-auto > div > div > div.undefined.nav"
+      ).style.display = "block";
     }
 
     // Removes next arrow on final slide
     if (context.currentSlide === context.total) {
       document.querySelector(
-        '#root > div > div.mx-auto.my-auto > div > div > div.next-arrow.nav'
-      ).style.display = 'none';
+        "#root > div > div.mx-auto.my-auto > div > div > div.next-arrow.nav"
+      ).style.display = "none";
     } else {
       document.querySelector(
-        '#root > div > div.mx-auto.my-auto > div > div > div.next-arrow.nav'
-      ).style.display = 'block';
+        "#root > div > div.mx-auto.my-auto > div > div > div.next-arrow.nav"
+      ).style.display = "block";
     }
   }, [context]);
 
@@ -61,16 +62,16 @@ function Slides() {
     autoplay: false,
     defaultIndex: 0,
     prevArrow: (
-      <div style={{ width: '30px', marginRight: '-30px' }}>
-        <i className='fas fa-arrow-left'></i>
+      <div style={{ width: "30px", marginRight: "-30px" }}>
+        <i className="fas fa-arrow-left"></i>
       </div>
     ),
     nextArrow: (
       <div
-        className='next-arrow'
-        style={{ width: '30px', marginLeft: '-30px' }}
+        className="next-arrow"
+        style={{ width: "30px", marginLeft: "-30px" }}
       >
-        <i className='fas fa-arrow-right'></i>
+        <i className="fas fa-arrow-right"></i>
       </div>
     ),
     onChange: (previous, next) => {
@@ -80,7 +81,7 @@ function Slides() {
 
   // Sets post-quiz state
   const onCompleteAction = (obj) => {
-    document.querySelector('.next-arrow').style.display = 'block';
+    document.querySelector(".next-arrow").style.display = "block";
     context.onQuizCompletion();
   };
 
@@ -89,7 +90,7 @@ function Slides() {
     return (
       <div>
         <h4>Well done, you may now continue with the lesson.</h4>
-        <button onClick={retakeQuiz} className='btn btn-primary'>
+        <button onClick={retakeQuiz} className="btn btn-primary">
           Retake
         </button>
       </div>
@@ -99,187 +100,42 @@ function Slides() {
   return (
     <>
       <div
-        className='mx-auto my-auto'
+        className="mx-auto my-auto"
         style={{
-          top: '300px',
-          height: '500px',
-          width: '900px',
-          backgroundColor: '#f4f4f4',
+          top: "300px",
+          height: "500px",
+          width: "900px",
+          backgroundColor: "#f4f4f4",
         }}
       >
-        <Slide ref={slideRef} easing='ease' {...properties}>
-          <div className='slide'>
-            <div className='row p-3 m-1'>
-              <div className='col'>
-                <h3 className='slide-title'>Welcome to Financial Reporting</h3>
+        <Slide ref={slideRef} easing="ease" {...properties}>
+          <div className="slide">
+            <div className="row p-3 m-1">
+              <div className="col">
+                <h3 className="slide-title">Financial Reporting</h3>
                 <span>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Omnis, explicabo aliquam voluptatibus, reprehenderit saepe
-                  tenetur eaque itaque officia corporis eligendi doloribus vitae
-                  non, ratione commodi delectus deserunt ab provident quidem.
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Omnis, explicabo aliquam voluptatibus, reprehenderit saepe
-                  tenetur eaque itaque officia corporis eligendi doloribus vitae
-                  non, ratione commodi delectus deserunt ab provident quidem.
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Omnis, explicabo aliquam voluptatibus, reprehenderit saepe
-                  tenetur eaque itaque officia corporis eligendi doloribus vitae
-                  non, ratione commodi delectus deserunt ab provident quidem.
+                  This concludes the Financial Reporting course. In this course,
+                  we discussed the background of financial reporting, the
+                  benefits of reporting in GFEBS, what systems interface with
+                  GFEBS, how data is recorded, when the data is reconciled, and
+                  the role ECC & BI plays in the process. We also covered
+                  reporting standards, how the standards became common, key
+                  roles involved, and we discussed responsible business areas.
                 </span>
               </div>
-              <div className='col'>
-                <span>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Omnis, explicabo aliquam voluptatibus, reprehenderit saepe
-                  tenetur eaque itaque officia corporis eligendi doloribus vitae
-                  non, ratione commodi delectus deserunt ab provident quidem.
-                </span>
+              <div className="col">
+                <img src={GFEBS} />
               </div>
             </div>
           </div>
-          <div className='slide'>
-            <div className='row'>
-              <div className='col-6'>
-                <Quiz
-                  quiz={quiz}
-                  key={key}
-                  continueTillCorrect={true}
-                  showDefaultResult={false}
-                  onComplete={onCompleteAction}
-                  customResultPage={renderCustomResultPage}
-                />
+          <div className="slide">
+            <div className="row p-3 m-1">
+              <div className="col">
+                <h3 className="slide-title">Conclusion</h3>
+                <span>This concludes the course, Financial Reporting.</span>
+                <p>You may exit this course by clicking the Exit button.</p>
               </div>
-              <div className='col-6 d-flex p-5 justify-content-center'>
-                <img
-                  style={{ height: '300px' }}
-                  src='https://ssilrc.army.mil/resources/FMS/GFEBS/GFEBSLegacy/L413E/1FinancialReporting/html/images/qanda_-_info.png'
-                  alt=''
-                />
-              </div>
-            </div>
-          </div>
-          <div className='slide'>
-            <TermsComponent />
-          </div>
-          <div className='slide'>
-            <div className='row p-3 m-1'>
-              <div className='col'>
-                <div>
-                  <h3 className='slide-title'>title</h3>
-                  <p>text</p>
-                </div>
-              </div>
-              <div className='col'>IMAGE</div>
-            </div>
-          </div>
-          <div className='slide'>
-            <div className='row p-3 m-1'>
-              <div className='col'>
-                <div>
-                  <h3 className='slide-title'>title</h3>
-                  <p>text</p>
-                </div>
-              </div>
-              <div className='col'>IMAGE</div>
-            </div>
-          </div>
-          <div className='slide'>
-            <div className='row p-3 m-1'>
-              <div className='col'>
-                <div>
-                  <h3 className='slide-title'>title</h3>
-                  <p>text</p>
-                </div>
-              </div>
-              <div className='col'>IMAGE</div>
-            </div>
-          </div>
-          <div className='slide'>
-            <div className='row p-3 m-1'>
-              <div className='col'>
-                <div>
-                  <h3 className='slide-title'>title</h3>
-                  <p>text</p>
-                </div>
-              </div>
-              <div className='col'>IMAGE</div>
-            </div>
-          </div>
-          <div className='slide'>
-            <div className='row p-3 m-1'>
-              <div className='col'>
-                <div>
-                  <h3 className='slide-title'>title</h3>
-                  <p>text</p>
-                </div>
-              </div>
-              <div className='col'>IMAGE</div>
-            </div>
-          </div>
-          <div className='slide'>
-            <div className='row p-3 m-1'>
-              <div className='col'>
-                <div>
-                  <h3 className='slide-title'>title</h3>
-                  <p>text</p>
-                </div>
-              </div>
-              <div className='col'>IMAGE</div>
-            </div>
-          </div>
-          <div className='slide'>
-            <div className='row p-3 m-1'>
-              <div className='col'>
-                <div>
-                  <h3 className='slide-title'>title</h3>
-                  <p>text</p>
-                </div>
-              </div>
-              <div className='col'>IMAGE</div>
-            </div>
-          </div>
-          <div className='slide'>
-            <div className='row p-3 m-1'>
-              <div className='col'>
-                <div>
-                  <h3 className='slide-title'>title</h3>
-                  <p>text</p>
-                </div>
-              </div>
-              <div className='col'>IMAGE</div>
-            </div>
-          </div>
-          <div className='slide'>
-            <div className='row p-3 m-1'>
-              <div className='col'>
-                <div>
-                  <h3 className='slide-title'>title</h3>
-                  <p>text</p>
-                </div>
-              </div>
-              <div className='col'>IMAGE</div>
-            </div>
-          </div>
-          <div className='slide'>
-            <div className='row p-3 m-1'>
-              <div className='col'>
-                <div>
-                  <h3 className='slide-title'>title</h3>
-                  <p>text</p>
-                </div>
-              </div>
-              <div className='col'>IMAGE</div>
-            </div>
-          </div>
-          <div className='slide'>
-            <div className='row p-3 m-1'>
-              <div className='col'>
-                <div>
-                  <h3 className='slide-title'>title</h3>
-                  <p>text</p>
-                </div>
-              </div>
-              <div className='col'>IMAGE</div>
+              <div className="col"></div>
             </div>
           </div>
         </Slide>

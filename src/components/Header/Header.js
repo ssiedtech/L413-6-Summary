@@ -125,7 +125,7 @@ export default function Header() {
           fontSize: '27px',
         }}
       >
-        Financial Reporting
+       Summary
       </span>
     </>
   );
