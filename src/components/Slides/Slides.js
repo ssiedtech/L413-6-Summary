@@ -1,9 +1,7 @@
 import React, { useRef, useState, useEffect, useContext } from "react";
+import { Image } from "react-bootstrap";
 import { Slide } from "react-slideshow-image";
 import { AppContext } from "../../context/AppContext";
-import Quiz from "react-quiz-component";
-import { quiz } from "../Quiz/Quiz";
-import TermsComponent from "../TermsComponent/TermsComponent.js";
 import GFEBS from "../../img/GFEBS.png";
 
 function Slides() {
@@ -124,7 +122,7 @@ function Slides() {
                 </span>
               </div>
               <div className="col">
-                <img src={GFEBS} />
+                <Image fluid className="slide-image" src={GFEBS} alt="" />
               </div>
             </div>
           </div>
@@ -132,10 +130,12 @@ function Slides() {
             <div className="row p-3 m-1">
               <div className="col">
                 <h3 className="slide-title">Conclusion</h3>
-                <span>This concludes the course, Financial Reporting.</span>
-                <p>You may exit this course by clicking the Exit button.</p>
+                <h4>This concludes the course, Financial Reporting.</h4>
+                <p>
+                  You may exit this course by clicking the <strong>Exit</strong>{" "}
+                  button.
+                </p>
               </div>
-              <div className="col"></div>
             </div>
           </div>
         </Slide>

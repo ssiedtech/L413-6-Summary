@@ -4,7 +4,7 @@ import { faFolder, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { AppContext } from '../../context/AppContext';
 import { Button, Modal, ListGroup } from 'react-bootstrap';
 
-import Shield from '../../img/shield.png';
+import Shield from '../../img/Shield.png';
 
 export default function Header() {
   const context = useContext(AppContext);

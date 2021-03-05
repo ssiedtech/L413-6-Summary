@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
+.slide-image {
+  width: 100%;
+  margin-left: 1rem;
+  margin-top: 3rem;
+  -webkit-filter: drop-shadow(3px 2px 3px rgba(87, 87, 87, 0.8));
+          filter: drop-shadow(3px 2px 3px rgba(87, 87, 87, 0.8));
+}
+
 .slide-title,
 .react-quiz-container h2 {
   font-size: 24px;
@@ -36,7 +44,8 @@
 }
 
 .modal-body {
-  height: 500px;
+  height: 100%;
+  max-height: 500px;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-bottom: 1rem;
