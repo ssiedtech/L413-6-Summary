@@ -3,6 +3,7 @@ import { Image } from "react-bootstrap";
 import { Slide } from "react-slideshow-image";
 import { AppContext } from "../../context/AppContext";
 import GFEBS from "../../img/GFEBS.png";
+import Conclusion from "../../img/conclusion.png";
 
 function Slides() {
   // State management
@@ -58,6 +59,7 @@ function Slides() {
     indicators: false,
     arrows: true,
     autoplay: false,
+    canSwipe: false,
     defaultIndex: 0,
     prevArrow: (
       <div style={{ width: "30px", marginRight: "-30px" }}>
@@ -135,6 +137,14 @@ function Slides() {
                   You may exit this course by clicking the <strong>Exit</strong>{" "}
                   button.
                 </p>
+              </div>
+              <div className="col">
+                <Image
+                  fluid
+                  className="slide-image"
+                  src={Conclusion}
+                  alt="conclusion"
+                />
               </div>
             </div>
           </div>

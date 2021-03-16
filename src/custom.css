@@ -3,8 +3,8 @@
   width: 100%;
   margin-left: 1rem;
   margin-top: 3rem;
-  -webkit-filter: drop-shadow(3px 2px 3px rgba(87, 87, 87, 0.8));
-          filter: drop-shadow(3px 2px 3px rgba(87, 87, 87, 0.8));
+  -webkit-filter: drop-shadow(2px 2px 3px rgba(17, 17, 17, 0.5));
+          filter: drop-shadow(2px 2px 3px rgba(17, 17, 17, 0.5));
 }
 
 .slide-title,
@@ -163,7 +163,7 @@ button.close {
 }
 
 .p-1[style] {
-  padding: 0.50rem !important;
+  padding: 0.5rem !important;
 }
 
 /*!
