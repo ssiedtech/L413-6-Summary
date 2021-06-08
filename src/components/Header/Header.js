@@ -4,7 +4,7 @@ import { faFolder, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { AppContext } from "../../context/AppContext";
 import { Button, Modal, ListGroup } from "react-bootstrap";
 
-import Shield from "../../img/Shield.png";
+import Shield from "../../img/shield.png";
 
 export default function Header() {
   const context = useContext(AppContext);
@@ -27,10 +27,7 @@ export default function Header() {
 
   return (
     <>
-      <div
-        className="blue-banner"
-        style={{ width: "100%", height: "25px", backgroundColor: "#009bd1" }}
-      ></div>
+      <div className="blue-banner" style={{ width: "100%", height: "25px", backgroundColor: "#009bd1" }}></div>
       <div className="d-flex justify-content-between">
         <div className="title align-items-end row ml-5 p-3">
           <div className="p-2">
@@ -99,11 +96,7 @@ export default function Header() {
                 <ListGroup variant="flush">
                   {context.index &&
                     context.index.map((title, i) => (
-                      <ListGroup.Item
-                        eventKey={i}
-                        key={i}
-                        onClick={handleIndexClick}
-                      >
+                      <ListGroup.Item eventKey={i} key={i} onClick={handleIndexClick}>
                         {title}
                       </ListGroup.Item>
                     ))}

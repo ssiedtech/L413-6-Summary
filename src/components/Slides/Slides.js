@@ -3,7 +3,7 @@ import { Image } from "react-bootstrap";
 import { Slide } from "react-slideshow-image";
 import { AppContext } from "../../context/AppContext";
 import GFEBS from "../../img/GFEBS.png";
-import Conclusion from "../../img/conclusion.png";
+import Conclusion from "../../img/conclusion.svg";
 
 function Slides() {
   // State management
@@ -18,24 +18,20 @@ function Slides() {
 
     // Removes back arrow on first slide
     if (context.currentSlide === 1) {
-      document.querySelector(
-        "#root > div > div.mx-auto.my-auto > div > div > div.undefined.nav"
-      ).style.display = "none";
+      document.querySelector("#root > div > div.mx-auto.my-auto > div > div > div.undefined.nav").style.display =
+        "none";
     } else {
-      document.querySelector(
-        "#root > div > div.mx-auto.my-auto > div > div > div.undefined.nav"
-      ).style.display = "block";
+      document.querySelector("#root > div > div.mx-auto.my-auto > div > div > div.undefined.nav").style.display =
+        "block";
     }
 
     // Removes next arrow on final slide
     if (context.currentSlide === context.total) {
-      document.querySelector(
-        "#root > div > div.mx-auto.my-auto > div > div > div.next-arrow.nav"
-      ).style.display = "none";
+      document.querySelector("#root > div > div.mx-auto.my-auto > div > div > div.next-arrow.nav").style.display =
+        "none";
     } else {
-      document.querySelector(
-        "#root > div > div.mx-auto.my-auto > div > div > div.next-arrow.nav"
-      ).style.display = "block";
+      document.querySelector("#root > div > div.mx-auto.my-auto > div > div > div.next-arrow.nav").style.display =
+        "block";
     }
   }, [context]);
 
@@ -58,6 +54,7 @@ function Slides() {
   const properties = {
     indicators: false,
     arrows: true,
+    transitionDuration: 200,
     autoplay: false,
     canSwipe: false,
     defaultIndex: 0,
@@ -67,10 +64,7 @@ function Slides() {
       </div>
     ),
     nextArrow: (
-      <div
-        className="next-arrow"
-        style={{ width: "30px", marginLeft: "-30px" }}
-      >
+      <div className="next-arrow" style={{ width: "30px", marginLeft: "-30px" }}>
         <i className="fas fa-arrow-right"></i>
       </div>
     ),
@@ -114,13 +108,11 @@ function Slides() {
               <div className="col">
                 <h3 className="slide-title">Financial Reporting</h3>
                 <span>
-                  This concludes the Financial Reporting course. In this course,
-                  we discussed the background of financial reporting, the
-                  benefits of reporting in GFEBS, what systems interface with
-                  GFEBS, how data is recorded, when the data is reconciled, and
-                  the role ECC & BI plays in the process. We also covered
-                  reporting standards, how the standards became common, key
-                  roles involved, and we discussed responsible business areas.
+                  This concludes the Financial Reporting course. In this course, we discussed the background of
+                  financial reporting, the benefits of reporting in GFEBS, what systems interface with GFEBS, how data
+                  is recorded, when the data is reconciled, and the role ECC & BI plays in the process. We also covered
+                  reporting standards, how the standards became common, key roles involved, and we discussed responsible
+                  business areas.
                 </span>
               </div>
               <div className="col">
@@ -134,17 +126,11 @@ function Slides() {
                 <h3 className="slide-title">Conclusion</h3>
                 <h4>This concludes the course, Financial Reporting.</h4>
                 <p>
-                  You may exit this course by clicking the <strong>Exit</strong>{" "}
-                  button.
+                  You may exit this course by clicking the <strong>Exit</strong> button.
                 </p>
               </div>
               <div className="col">
-                <Image
-                  fluid
-                  className="slide-image"
-                  src={Conclusion}
-                  alt="conclusion"
-                />
+                <Image fluid className="slide-image" src={Conclusion} alt="conclusion" />
               </div>
             </div>
           </div>
